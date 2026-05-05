@@ -1,6 +1,6 @@
 //@/components/HeroSection.tsx
 import type { JSX } from 'react';
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { divisibilityRules } from '@/lib/utils';
@@ -9,47 +9,81 @@ import type { Divisor } from '@/types';
 interface HeroSectionProps {
   onStart: (section: 'rules' | 'quiz' | 'checker' | 'home') => void;
 }
+const useScreenWidth = () => {
+  const [width, setWidth] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return width;
+};
 
 const HeroSection = ({ onStart }: HeroSectionProps): JSX.Element => {
   const previewDivisors: Divisor[] = [3, 4, 5, 6, 7, 8, 9];
-  const mathSymbols = ['∞', '×', '+', '-', '💼', '📚', '📖', '🥇'];
-  const SYMBOL_COUNT = 30;
+  const screenWidth = useScreenWidth();
+  const mathSymbols = ['×', '+', '-', '💼', '📚', '🥇', '🔥', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '🤷🏼‍♂️', '🕹️'];
+  const SYMBOL_COUNT = useMemo(() => {
+    const density = 20; // пикселей на один символ
+    const minCount = 7;  // минимум для совсем узких экранов
+    const maxCount = 30;  // максимум для больших экранов
+    return Math.max(minCount, Math.min(maxCount, Math.floor(screenWidth / density)));
+  }, [screenWidth]);
 
-  const backgroundSymbols = useMemo(() =>
-    [...Array(SYMBOL_COUNT)].map((_, i) => ({
-      id: i,
-      symbol: mathSymbols[Math.floor(Math.random() * mathSymbols.length)],
-      left: Math.random() * 80,
-      top: Math.random() * 90,
-      size: 'text-2xl sm:text-4xl',
-      delay: Math.random() * 0.5,
-      duration: 4 + Math.random() * 0.4,
-    })),
-    []);
+
+  const backgroundSymbols = useMemo(() => {
+    // 🎯 Равномерное распределение по горизонтали (сетка)
+    const columnWidth = 100 / SYMBOL_COUNT;
+
+    return [...Array(SYMBOL_COUNT)].map((_, i) => {
+      // Позиция в своей "колонке" с небольшим случайным смещением (±30% от ширины колонки)
+      const columnStart = i * columnWidth;
+      const randomOffset = (Math.random() - 0.5) * columnWidth * 0.6;
+      const left = columnStart + randomOffset;
+      const size = screenWidth < 400 ? 'text-3xl' : 'text-4xl';
+
+
+      return {
+        id: i,
+        symbol: mathSymbols[Math.floor(Math.random() * mathSymbols.length)],
+        left: Math.max(0, Math.min(100, left)), // защита от выхода за границы
+        top: Math.random() * 80,
+        size,
+        delay: 0,
+        duration: 55 + Math.random() * 10,
+      };
+    });
+  }, [SYMBOL_COUNT, screenWidth]);
 
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-violet-50 via-purple-50 to-pink-50" />
 
       {/* Animated background symbols */}
-      <div className="absolute inset-0 opacity-30 pointer-events-none">
+      <div className="absolute inset-0 opacity-40 pointer-events-none">
         {backgroundSymbols.map((item) => (
           <motion.div
             key={item.id}
             className={`absolute select-none ${item.size}`}
-            initial={{ y: -30, opacity: 0, scale: 0.2 }}
-            animate={{ y: 50, opacity: 1, scale: 1 }}
+            animate={{
+              y: ["-10vh", "45vh"],
+              opacity: [0, 1, 1, 0],
+            }}
             transition={{
-              delay: item.delay,
               duration: item.duration,
-              ease: 'easeOut',
+              repeat: Infinity,
+              ease: "linear",
+              delay: item.delay,
             }}
             style={{
               left: `${item.left}%`,
               top: `${item.top}%`,
             }}
-            aria-hidden="true"
-          >
+            aria-hidden="true"          >
             {item.symbol}
           </motion.div>
         ))}
