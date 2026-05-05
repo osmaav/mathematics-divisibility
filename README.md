@@ -23,10 +23,9 @@
 - **Frontend:** React 19.2.0, TypeScript 5.9.3
 - **Сборка:** Vite 7.2.4
 - **Стилизация:** Tailwind CSS 3.4.19
-- **Компоненты:** shadcn/ui (40+ компонентов Radix UI)
+- **Компоненты:** shadcn/ui
 - **Анимации:** Framer Motion 12.34.2
 - **Формы:** React Hook Form 7.70.0, Zod 4.3.5
-- **Графики:** Recharts 2.15.4
 - **Утилиты:** clsx, tailwind-merge, class-variance-authority
 
 ## 📦 Установка
@@ -128,4 +127,4 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 
 ---
 
-Создано с ❤️ для обучения математике
+Создано с ❤️ для обучения сына
