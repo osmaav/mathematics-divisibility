@@ -6,7 +6,7 @@ const Footer = () => (
       <p className="text-sm text-gray-500 font-medium">Математика 5 класс — Правила делимости</p>
       <p className="text-xs text-gray-400 mt-1">Интерактивный учебный ресурс</p>
       <div className="flex justify-center gap-4 mt-4">
-        <span className="text-xs text-gray-400">Сделано с ❤️ для учеников</span>
+        <span className="text-xs text-gray-400">Сделано с ❤️ для сына Андрея</span>
       </div>
     </div>
   </footer>
