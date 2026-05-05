@@ -28,3 +28,6 @@ Thumbs.db
 *.tsbuildinfo
 
 # Тесты
+#
+# Скрипты
+.zsh
