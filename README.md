@@ -96,14 +96,10 @@ mathematics_delimosty/
 
 ## 🎨 Компоненты
 
-Проект использует более 40 компонентов из библиотеки shadcn/ui:
+Проект использует более компоненты из библиотеки shadcn/ui:
 
-- Accordion, Alert Dialog, Alert
-- Button, Card, Checkbox
-- Dialog, Dropdown Menu, Form
-- Input, Label, Select
-- Table, Tabs, Toast (Sonner)
-- Tooltip, Popover, Progress
+- Button, Card, 
+- Progress
 - И многие другие
 
 Пример использования:
