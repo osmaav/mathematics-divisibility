@@ -1,13 +1,13 @@
 //@/src/components/RulesSection.tsx
-import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RuleCard } from '@/components/RuleCard';
 import { divisibilityRules } from '@/lib/utils';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 import type { Divisor } from '@/types';
 
 const RulesSection = () => {
-  const [activeRule, setActiveRule] = useState<Divisor>(3);
-  const [selectedDivisors, setSelectedDivisors] = useState<Divisor[]>([3, 4, 5, 6, 7, 8, 9]);
+  const [activeRule, setActiveRule] = useLocalStorage<Divisor>('activeRule', 3);
+  const [selectedDivisors, setSelectedDivisors] = useLocalStorage<Divisor[]>('selectedDivisors', [3, 4, 5, 6, 7, 8, 9]);
 
   const toggleDivisor = (d: Divisor) => {
     setSelectedDivisors((prev: Divisor[]) =>
