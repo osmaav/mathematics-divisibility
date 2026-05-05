@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 29% 24%;
+    --card: 210 20% 98%;
+    --card-foreground: 210 29% 24%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 29% 24%;
+    --primary: 175 55% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 100% 71%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 9% 53%;
+    --accent: 48 100% 71%;
+    --accent-foreground: 210 29% 24%;
+    --destructive: 6 78% 57%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 92%;
+    --input: 210 20% 92%;
+    --ring: 175 55% 55%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Safe area insets for iPhone */
+    --sat: env(safe-area-inset-top);
+    --sar: env(safe-area-inset-right);
+    --sab: env(safe-area-inset-bottom);
+    --sal: env(safe-area-inset-left);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  body {
+    @apply bg-white text-text-primary font-body antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Safe area padding for iPhone notch and home indicator */
+    padding-top: var(--sat);
+    padding-bottom: var(--sab);
+    padding-left: var(--sal);
+    padding-right: var(--sar);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+  
+  code, pre {
+    @apply font-mono;
+  }
+  
+  /* Ensure touch targets are at least 44px for iOS */
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Remove default button styles on iOS */
+  button {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  /* Fix input zoom on iOS */
+  input, select, textarea {
+    font-size: 16px;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply w-full px-4 sm:px-6 lg:px-8 xl:px-12;
+    /* Extra padding for iPhone safe areas */
+    padding-left: max(1rem, var(--sal));
+    padding-right: max(1rem, var(--sar));
+  }
+  
+  .section-inner {
+    @apply max-w-6xl mx-auto;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-4 rounded-xl font-heading font-bold text-white bg-nod transition-all duration-300 hover:bg-nod-dark active:scale-95;
+    min-height: 52px;
+    touch-action: manipulation;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-4 rounded-xl font-heading font-bold text-white bg-nok transition-all duration-300 hover:bg-nok-dark active:scale-95;
+    min-height: 52px;
+    touch-action: manipulation;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-4 rounded-xl border-2 border-border bg-white text-text-primary font-mono text-base transition-all duration-300 focus:border-nod focus:ring-2 focus:ring-nod/20 outline-none;
+    min-height: 52px;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  .highlight-nod {
+    @apply bg-nod/10 text-nod-dark px-2 py-1 rounded-lg font-bold;
+  }
+  
+  .highlight-nok {
+    @apply bg-nok/10 text-nok-dark px-2 py-1 rounded-lg font-bold;
+  }
+  
+  .math-formula {
+    @apply font-mono text-base bg-gray-50 px-3 py-2 rounded-xl border border-border inline-block;
+  }
+  
+  .step-number {
+    @apply w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-white text-lg;
+    min-width: 40px;
+    min-height: 40px;
+  }
+  
+  .step-number-nod {
+    @apply step-number bg-nod;
+  }
+  
+  .step-number-nok {
+    @apply step-number bg-nok;
+  }
+  
+  /* iPhone-specific safe area helpers */
+  .safe-top {
+    padding-top: max(1rem, var(--sat));
+  }
+  
+  .safe-bottom {
+    padding-bottom: max(1rem, var(--sab));
+  }
+  
+  .safe-x {
+    padding-left: max(1rem, var(--sal));
+    padding-right: max(1rem, var(--sar));
+  }
+}
+
+@layer utilities {
+  .text-gradient-nod {
+    @apply bg-gradient-to-r from-nod to-nod-dark bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-nok {
+    @apply bg-gradient-to-r from-nok to-nok-dark bg-clip-text text-transparent;
+  }
+  
+  .bg-gradient-nod {
+    @apply bg-gradient-to-br from-nod to-nod-dark;
+  }
+  
+  .bg-gradient-nok {
+    @apply bg-gradient-to-br from-nok to-nok-dark;
+  }
+  
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+  
+  /* Touch-friendly utilities */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  .no-select {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+/* Custom scrollbar - hidden on mobile for cleaner look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Hide scrollbar on mobile */
+@media (max-width: 640px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Selection */
+::selection {
+  background: rgba(78, 205, 196, 0.3);
+  color: #2C3E50;
+}
+
+/* iPhone 13 specific optimizations */
+@media screen and (device-width: 390px) and (device-height: 844px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 375px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .section-container {
+    @apply px-3;
+  }
+}
+
+/* Landscape mode on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .section-container {
+    @apply px-4;
+  }
+}
+
+/* Prevent text size adjustment on orientation change */
+@media screen and (orientation: portrait) {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* Fix for iOS momentum scrolling */
+.scroll-momentum {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Disable callout on long press for iOS */
+.no-callout {
+  -webkit-touch-callout: none;
+}
+
+/* иконка подстраиваеться под любой font-size родителя */
+.inline-icon {
+  display: inline-block;
+  /* Высота в 1em делает иконку равной высоте строки текста */
+  height: 1em;
+  width: auto; 
+  /* Отступы */
+  padding-right: 0.25em;
+}
+
