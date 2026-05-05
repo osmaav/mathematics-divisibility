@@ -310,3 +310,11 @@
   padding-right: 0.25em;
 }
 
+/* Глобальные фиксы для Safari */
+@supports (-webkit-touch-callout: none) {
+  .motion-button {
+    -webkit-font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+}

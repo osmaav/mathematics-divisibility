@@ -140,16 +140,16 @@ const HeroSection = ({ onStart }: HeroSectionProps): JSX.Element => {
               <motion.button
                 key={divisor}
                 type="button"
-                initial={{ scale: 0 }}
+                initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
-                transition={{ delay: 0.9 + index * 0.08, type: 'spring', stiffness: 200 }}
-                whileHover={{ scale: 1.15, y: -4 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white rounded-xl p-2 sm:p-3 shadow-md text-center cursor-pointer border border-gray-100 hover:border-violet-300 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-400"
+                transition={{ delay: 0.9 + index * 0.08, type: 'tween', ease: 'easeOut', duration: 0.6 }}
+                whileHover={{ scale: 1.05, y: -4 }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-white rounded-xl p-2 sm:p-3 shadow-md text-center cursor-pointer border border-gray-100 hover:border-violet-300 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-400 will-change-transform transform-gpu [-webkit-font-smoothing:antialiased] [-webkit-backface-visibility:hidden]"
                 onClick={() => onStart('rules')}
                 aria-label={`Правило делимости на ${divisor}`}
               >
-                <div className="text-xl sm:text-2xl mb-1" aria-hidden="true">
+                <div className="text-xl sm:text-2xl mb-1 flex items-center justify-center [-webkit-transform:translateZ(0)] [transform:translateZ(0)]" aria-hidden="true">
                   {rule.emoji}
                 </div>
                 <div className="text-sm sm:text-base font-bold text-gray-800">
