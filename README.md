@@ -1,73 +1,131 @@
-# React + TypeScript + Vite
+# Mathematics Delimosty — Интерактивный образовательный сайт о правилах делимости
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![React](https://img.shields.io/badge/React-19.2.0-61dafb.svg?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178c6.svg?logo=typescript)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-7.2.4-646cff.svg?logo=vite)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.19-38bdf8.svg?logo=tailwindcss)](https://tailwindcss.com/)
 
-Currently, two official plugins are available:
+Интерактивный образовательный веб-сайт, предназначенный для обучения учеников правилам делимости чисел. Сайт включает в себя теоретические материалы, интерактивную визуализацию, проверку чисел на делимость и викторины для закрепления знаний.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Особенности
 
-## React Compiler
+- **📚 Правила делимости** — подробное описание правил делимости на 2, 3, 5, 9, 10 и другие числа
+- **✅ Проверка чисел** — интерактивный инструмент для проверки чисел на делимость
+- **🎨 Визуализация** — наглядное представление процесса деления и разбиения чисел
+- **🧠 Викторины** — тесты для проверки и закрепления полученных знаний
+- **🎯 Интересные факты** — занимательная информация о числах и делимости
+- **📱 Адаптивный дизайн** — сайт корректно отображается на всех устройствах
+- **🌙 Современный UI** — использует компоненты shadcn/ui и анимации Framer Motion
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Технологии
 
-## Expanding the ESLint configuration
+- **Frontend:** React 19.2.0, TypeScript 5.9.3
+- **Сборка:** Vite 7.2.4
+- **Стилизация:** Tailwind CSS 3.4.19
+- **Компоненты:** shadcn/ui (40+ компонентов Radix UI)
+- **Анимации:** Framer Motion 12.34.2
+- **Формы:** React Hook Form 7.70.0, Zod 4.3.5
+- **Графики:** Recharts 2.15.4
+- **Утилиты:** clsx, tailwind-merge, class-variance-authority
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Установка
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Требования
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js 20 или выше
+- npm или другой пакетный менеджер
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Шаги установки
+
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/osmaav/mathematics_delimosty.git
+   cd mathematics_delimosty
+   ```
+
+2. Установите зависимости:
+   ```bash
+   npm install
+   ```
+
+3. Запустите проект в режиме разработки:
+   ```bash
+   npm run dev
+   ```
+
+4. Откройте браузер и перейдите по адресу `http://localhost:5173`
+
+## 🚀 Доступные команды
+
+| Команда | Описание |
+|---------|----------|
+| `npm run dev` | Запуск сервера разработки с горячей перезагрузкой |
+| `npm run build` | Сборка проекта для продакшена |
+| `npm run preview` | Предварительный просмотр собранной версии |
+| `npm run lint` | Проверка кода с помощью ESLint |
+
+## 📁 Структура проекта
+
+```
+mathematics_delimosty/
+├── src/
+│   ├── components/       # React компоненты
+│   │   ├── ui/          # Базовые UI компоненты (shadcn/ui)
+│   │   ├── Header.tsx   # Шапка сайта
+│   │   ├── HeroSection.tsx
+│   │   ├── RulesSection.tsx
+│   │   ├── CheckerSection.tsx
+│   │   ├── QuizSection.tsx
+│   │   └── ...
+│   ├── hooks/           # Кастомные React хуки
+│   │   ├── useQuiz.ts
+│   │   └── useLocalStorage.ts
+│   ├── types/           # TypeScript типы
+│   │   └── index.ts
+│   ├── lib/             # Вспомогательные функции
+│   ├── App.tsx          # Главный компонент приложения
+│   ├── main.tsx         # Точка входа
+│   └── index.css        # Глобальные стили
+├── public/              # Статические файлы
+├── package.json         # Зависимости и скрипты
+├── tsconfig.json        # Конфигурация TypeScript
+├── vite.config.ts       # Конфигурация Vite
+├── tailwind.config.js   # Конфигурация Tailwind CSS
+└── README.md            # Документация
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎨 Компоненты
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Проект использует более 40 компонентов из библиотеки shadcn/ui:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Accordion, Alert Dialog, Alert
+- Button, Card, Checkbox
+- Dialog, Dropdown Menu, Form
+- Input, Label, Select
+- Table, Tabs, Toast (Sonner)
+- Tooltip, Popover, Progress
+- И многие другие
+
+Пример использования:
+```tsx
+import { Button } from '@/components/ui/button'
+import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 ```
+
+## 📄 Лицензия
+
+Этот проект распространяется под лицензией ISC.
+
+## 👤 Автор
+
+- **@osmaav**
+
+## 🔗 Ссылки
+
+- [Репозиторий на GitHub](https://github.com/osmaav/mathematics_delimosty)
+- [Сообщить об ошибке](https://github.com/osmaav/mathematics_delimosty/issues)
+
+---
+
+Создано с ❤️ для обучения математике
