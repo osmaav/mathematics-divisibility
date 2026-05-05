@@ -6,8 +6,8 @@ import { useLocalStorage } from '@/hooks/useLocalStorage';
 import type { Divisor } from '@/types';
 
 const RulesSection = () => {
-  const [activeRule, setActiveRule] = useLocalStorage<Divisor>('activeRule', 3);
-  const [selectedDivisors, setSelectedDivisors] = useLocalStorage<Divisor[]>('selectedDivisors', [3, 4, 5, 6, 7, 8, 9]);
+  const [activeRule, setActiveRule] = useLocalStorage<Divisor | null>('activeRule', null);
+  const [selectedDivisors, setSelectedDivisors] = useLocalStorage<Divisor[]>('selectedDivisors', []);
 
   const toggleDivisor = (d: Divisor) => {
     setSelectedDivisors((prev: Divisor[]) =>

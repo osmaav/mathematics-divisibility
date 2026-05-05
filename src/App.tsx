@@ -14,8 +14,13 @@ import type { Sections } from '@/types';
 function App() {
   const [activeSection, setActiveSection] = useState<Sections>('home');
 
-  const handleStart = (section: Sections) => {
+  const handleStart = (section: Sections, divisor?: number) => {
     setActiveSection(section);
+    // Если передан делитель, сохраняем его в localStorage для RulesSection
+    if (divisor && section === 'rules') {
+      window.localStorage.setItem('selectedDivisors', JSON.stringify([divisor]));
+      window.localStorage.setItem('activeRule', JSON.stringify(divisor));
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
