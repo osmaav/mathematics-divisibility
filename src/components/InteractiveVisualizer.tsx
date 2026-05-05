@@ -37,7 +37,7 @@ const InteractiveVisualizer = () => {
           </div>
 
           <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {[3, 4, 5, 6].map(d => {
+            {[3, 4, 5, 6, 7, 8, 9].map(d => {
               const remainder = num % d;
               const groups = Math.floor(num / d);
               return (
