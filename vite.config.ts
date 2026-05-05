@@ -1,13 +1,19 @@
+// vite.config.ts
 import path from "path";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 export default defineConfig({
+  // 👇 Абсолютный путь с именем репозитория — обязательно для GitHub Pages
+  base: '/mathematics-divisibility/',
+
   build: {
-    outDir: 'docs'
+    outDir: 'docs',  // ✅ Оставляем docs, если так удобно
+    emptyOutDir: true,
   },
-  base: './',
+
   plugins: [react()],
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -17,6 +23,7 @@ export default defineConfig({
       '@types': path.resolve(__dirname, './src/types')
     },
   },
+
   css: {
     postcss: './postcss.config.js',
   }
