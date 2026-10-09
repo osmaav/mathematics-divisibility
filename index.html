@@ -1,12 +1,33 @@
 <!doctype html>
+<!--
+  index.html
+  Version: 1.1.0 (2026-10-09)
+  Комментарий к изменениям: добавлены favicon, PWA-манифест и полный набор
+  Apple Touch / web-app иконок для экранов iPhone 7...iPhone 16 (включая SE, X…16 Pro Max)
+  и iPad 6...iPad 10 (включая Air, mini, Pro 11"/12.9"). Итоговые PNG — физическое
+  разрешение @2x от логического размера экрана, как требует iOS.
+-->
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
     <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="apple-mobile-web-app-title" content="Делимость" />
+    <meta name="theme-color" content="#2563eb" />
     <meta name="format-detection" content="telephone=no" />
+    <!-- v1.1.0: favicon и PWA -->
+    <link rel="icon" type="image/png" sizes="48x48" href="/mathematics-divisibility/icons/icon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/mathematics-divisibility/icons/icon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/mathematics-divisibility/icons/icon-192x192.png" />
+    <link rel="manifest" href="/mathematics-divisibility/manifest.webmanifest" />
+    <!-- v1.1.0: Apple Touch Icons — iPhone 7/8/SE2/SE3 (лог. 375x667@2x -> 180px),
+         iPhone X...16 Pro Max, iPad 6/7/8/9/10, iPad Air/mini/Pro (152/167px) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/mathematics-divisibility/icons/icon-180x180.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/mathematics-divisibility/icons/icon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/mathematics-divisibility/icons/icon-152x152.png" />
+    <link rel="apple-touch-icon-precomposed" href="/mathematics-divisibility/icons/icon-180x180.png" />
     <title>Правила делимости - Математика 5 класс</title>
   </head>
   <body>

@@ -1,4 +1,7 @@
 // vite.config.ts
+// Version: 1.1.0 (2026-10-09)
+// Комментарий к изменениям: версия конфига синхронизирована с версией пакета;
+// сборка в ./docs используется workflow .github/workflows/deploy.yml для GitHub Pages.
 import path from "path";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
