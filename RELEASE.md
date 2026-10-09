@@ -1,0 +1,83 @@
+<!-- @/RELEASE.md -->
+<!-- Файл описания релизов. Версионирование: Semantic Versioning (SemVer). -->
+<!-- Формат журнала изменений: Keep a Changelog. См. также CHANGELOG.md -->
+
+# 🎓 Математика 5 класс: Правила делимости — релиз v1.2.0
+
+**Версия:** 1.2.0
+**Дата релиза:** 10 октября 2026
+**Репозиторий:** https://github.com/osmaav/mathematics-divisibility
+**Сайт (GitHub Pages):** https://osmaav.github.io/mathematics-divisibility/
+**Деплой:** workflow «deploy» (.github/workflows/deploy.yml) при push в ветку `main`
+
+---
+
+## ✨ Что в этой версии (v1.2.0)
+
+### 🔗 Перекрёстные ссылки с проектом «НОД и НОК»
+- В шапке сайта (`src/components/Header.tsx`) появилась ссылка на
+  https://osmaav.github.io/mathematics_nok_nod/ — в десктопной навигации и в мобильном меню
+- Ответная ссылка на этот сайт добавлена в шапку проекта mathematics_nok_nod (v2.2.0)
+- Оба образовательных сайта теперь связаны друг с другом для удобной навигации ребёнка
+
+---
+
+## 📦 Полный список возможностей приложения
+
+### 📚 Теория и практика
+- Правила делимости на 3, 4, 5, 6, 7, 8 и 9 с примерами
+- Интерактивная проверка чисел на делимость
+- Наглядная визуализация процесса деления
+- Викторины для закрепления знаний
+- Занимательные факты о числах и делимости
+
+### 🎨 Интерфейс
+- Адаптивный дизайн, современный UI на компонентах shadcn/ui
+- Анимации Framer Motion
+- Web-иконки для iPhone/iPad и PWA-манифест (v1.1.0)
+
+---
+
+## 🛠 Технические детали
+
+### Стек технологий
+- **React 19** + **TypeScript 5.9** — UI и типизация
+- **Vite 7** — сборщик
+- **Tailwind CSS 3.4** — стилизация
+- **shadcn/ui** — библиотека компонентов
+- **Framer Motion** — анимации
+
+---
+
+## 📝 История изменений
+
+### v1.2.0 (10.10.2026)
+- ➕ Перекрёстная ссылка «НОД и НОК» в шапке (десктоп и мобильное меню)
+- 🔗 Обратная ссылка на https://osmaav.github.io/mathematics_nok_nod/ добавлена в проект mathematics_nok_nod (v2.2.0), подвал которого заменён на footer этого проекта
+- ➕ Файл `RELEASE.md` с описанием релизов, комментариями и версионностью
+- ⬆️ Версия пакета: 1.1.0 → 1.2.0 (минорное обратно совместимое изменение)
+
+### v1.1.0 (09.10.2026)
+- ➕ Web-иконки для iPhone 7…16 / iPad 6…10, манифест PWA, meta-теги web-app
+- ➕ CI/CD деплой на GitHub Pages (.github/workflows/deploy.yml)
+- ➕ CHANGELOG.md (Keep a Changelog / SemVer)
+
+### v1.0.0
+- 🎉 Интерактивный образовательный сайт «Правила делимости» (React + TypeScript + Vite + Tailwind CSS)
+
+---
+
+## 👨‍💻 Автор
+
+**Андрей Осьмаков**
+GitHub: [@osmaav](https://github.com/osmaav) · Telegram: [@osmaav](https://t.me/osmaav)
+
+## 📄 Лицензия
+
+ISC
+
+## 🔗 Ссылки
+
+- [GitHub Repository](https://github.com/osmaav/mathematics-divisibility)
+- [Сайт «Правила делимости»](https://osmaav.github.io/mathematics-divisibility/)
+- [Сайт «НОД и НОК»](https://osmaav.github.io/mathematics_nok_nod/)

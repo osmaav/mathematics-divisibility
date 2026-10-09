@@ -1,7 +1,7 @@
 # Mathematics Delimosty — Интерактивный образовательный сайт о правилах делимости
 
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
-[![Version](https://img.shields.io/badge/version-1.1.0-green.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.2.0-green.svg)](CHANGELOG.md)
 [![React](https://img.shields.io/badge/React-19.2.0-61dafb.svg?logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178c6.svg?logo=typescript)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-7.2.4-646cff.svg?logo=vite)](https://vitejs.dev/)
@@ -9,6 +9,15 @@
 [![Deploy](https://github.com/osmaav/mathematics_delimosty/actions/workflows/deploy.yml/badge.svg)](https://github.com/osmaav/mathematics_delimosty/actions/workflows/deploy.yml)
 
 Интерактивный образовательный веб-сайт, предназначенный для обучения учеников правилам делимости чисел. Сайт включает в себя теоретические материалы, интерактивную визуализацию, проверку чисел на делимость и викторины для закрепления знаний.
+
+## 🔗 Связанные проекты (v1.2.0)
+
+Сайт связан перекрёстными ссылками с проектом «НОД и НОК» (ссылки друг на друга — в шапке обоих сайтов):
+
+| Проект | Сайт | Репозиторий |
+|---|---|---|
+| Правила делимости (этот сайт) | https://osmaav.github.io/mathematics-divisibility/ | https://github.com/osmaav/mathematics-divisibility |
+| НОД и НОК | https://osmaav.github.io/mathematics_nok_nod/ | https://github.com/osmaav/mathematics_nok_nod |
 
 ## 📋 Особенности
 
@@ -19,6 +28,7 @@
 - **🎯 Интересные факты** — занимательная информация о числах и делимости
 - **📱 Адаптивный дизайн** — сайт корректно отображается на всех устройствах
 - **🌙 Современный UI** — использует компоненты shadcn/ui и анимации Framer Motion
+- **🔗 Перекрёстная ссылка на «НОД и НОК» (v1.2.0)** — в шапке сайта (десктоп и мобильное меню)
 - **📲 Web-иконки для iOS/Android (v1.1.0)** — Apple Touch Icons и PWA-манифест для экранов iPhone 7…iPhone 16 и iPad 6…iPad 10
 
 ## 🎨 Иконки веб-приложения (v1.1.0)
@@ -113,7 +123,8 @@ mathematics_delimosty/
 │   └── generate_icons.py     # Генерация иконок (v1.1.0)
 ├── .github/workflows/
 │   └── deploy.yml       # CI/CD: деплой в GitHub Pages (v1.1.0)
-├── package.json         # Зависимости и скрипты (version: 1.1.0)
+├── package.json         # Зависимости и скрипты (version: 1.2.0)
+├── RELEASE.md         # Описание релизов
 ├── tsconfig.json        # Конфигурация TypeScript
 ├── vite.config.ts       # Конфигурация Vite
 ├── tailwind.config.js   # Конфигурация Tailwind CSS
