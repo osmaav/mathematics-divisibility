@@ -5,6 +5,22 @@
 Формат основан на [Keep a Changelog](https://keepachangelog.com/ru/1.0.0/),
 а проект придерживается [Semantic Versioning](https://semver.org/lang/ru/).
 
+## [1.2.1] - 2026-10-10
+
+### Изменено
+- 🔀 Перекрёстная ссылка на проект «НОД и НОК»
+  (https://osmaav.github.io/mathematics_nok_nod/) перемещена из начала шапки (слева)
+  в конец шапки (справа, после навигации) в `src/components/Header.tsx`;
+  в мобильном меню осталась последней строкой.
+- 🗂 Все внешние ссылки (десктопная шапка и мобильное меню) открываются в текущей
+  вкладке: удалены атрибуты `target="_blank"` и `rel="noopener noreferrer"`.
+- Аналогичные корректировки в связанном проекте mathematics_nok_nod (v2.2.1).
+- Комментарии с версией изменения (`v1.2.1`) в затронутых исходных файлах.
+
+### Изменено (версионность)
+- `package.json`: версия `1.2.0` → `1.2.1` (патч — обратно совместимая корректировка).
+- `README.md`, `RELEASE.md`, `CHANGELOG.md`: описание релиза v1.2.1.
+
 ## [1.2.0] - 2026-10-10
 
 ### Добавлено
@@ -57,5 +73,6 @@
 - Адаптивный дизайн для мобильных устройств и десктопа.
 - Базовый workflow деплоя в GitHub Pages и конфигурация Vite (`base`, сборка в `./docs`).
 
+[1.2.1]: https://github.com/osmaav/mathematics-divisibility/releases/tag/v1.2.1
 [1.1.0]: https://github.com/osmaav/mathematics_delimosty/releases/tag/v1.1.0
 [1.0.0]: https://github.com/osmaav/mathematics_delimosty/releases/tag/v1.0.0
