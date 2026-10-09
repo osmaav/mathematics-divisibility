@@ -11,7 +11,7 @@ export default defineConfig({
   base: '/mathematics-divisibility/',
 
   build: {
-    outDir: 'docs',  // ✅ Оставляем docs, если так удобно
+    outDir: 'dist',
     emptyOutDir: true,
   },
 
