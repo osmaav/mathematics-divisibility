@@ -37,7 +37,7 @@ jobs:
       - name: 📤 Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./docs  # ✅ Оставляем docs, как в твоём vite.config
+          path: ./docs 
 
   deploy:
     environment:
